@@ -245,7 +245,7 @@ def fairfil_trainer(input_file, args):
     train_dataloader = DataLoader(train_data, sampler=train_sampler, batch_size=args.batch_size)
 
     #구체적인 값 명시 안되어서 적당히 설정
-    filter = (768,768, args.filter_nlayer).to(device) 
+    filter = MLP(768,768, args.filter_nlayer).to(device) 
     # score_function = SCORE(768*2,100,1).to(device)
     # criterion = nn.CrossEntropyLoss().to(device)
     # params = list(filter.parameters())+list(score_function.parameters())
